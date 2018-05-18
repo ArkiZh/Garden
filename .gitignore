@@ -1,0 +1,11 @@
+
+# Mac system file
+.DS_Store
+
+# IntelliJ project files
+.idea
+*.iml
+out/
+
+# Maven files
+target/
