@@ -1,5 +1,5 @@
 /**
- * 为指定区域绑定点击事件
+ * 为指定矩形区域绑定点击事件
  * @param option 示例值：{rectArea:{x:0,y:0,width:30,height:30},clickEvent:alertMessage}
  * @constructor
  */
