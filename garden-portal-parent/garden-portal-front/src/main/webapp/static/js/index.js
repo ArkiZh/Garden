@@ -37,18 +37,65 @@ $(function () {
         functionPen.fillStyle = functionPen.createPattern(filmImage, "no-repeat");
         //先按图片原大小填充，再缩放为canvas区域大小
         functionPen.rect(0,0,filmImage.naturalWidth,filmImage.naturalHeight);
-        functionPen.scale(130/filmImage.naturalWidth,functionAreaHeight/filmImage.naturalHeight);
+        functionPen.scale(100/filmImage.naturalWidth,functionAreaHeight/filmImage.naturalHeight);
         //填充canvas
         functionPen.fill();
     };
     functionPen.fillStyle="#000";
-    // canvas高150，宽屏幕宽度
-    functionPen.fillRect(130,30,ClientWidth-130,20);
-    functionPen.fillRect(130,100,ClientWidth-130,20);
-    // functionPen.stroke();
+    // 画胶卷中间按钮
+    var actualFilmHeight = 100;
+    var borderWidth = 20;
+    var buttonWidth = 100;
+    var buttonHeight = actualFilmHeight - borderWidth * 2;
+    //胶卷中间按钮的初始坐标
+    var baseX = 100;
+    var baseY = 30;
+    functionPen.fillRect(baseX,baseY,ClientWidth-baseX,actualFilmHeight);
+    var filmRecOption = {
+        pen: functionPen,
+        startX: baseX+borderWidth-3,
+        startY: baseY + borderWidth,
+        width: buttonWidth,
+        height: buttonHeight,
+        borderWidth: borderWidth,
+        wholeWidth: ClientWidth,
+        fillStyle: "#FFF"
+    };
+    drawListOfRectangle(filmRecOption);
+    //画胶卷上方小方框
+    var borderRecTopOption = {
+        pen: functionPen,
+        startX: baseX+5,
+        startY: baseY + borderWidth/3,
+        width: borderWidth/3,
+        height: borderWidth/3,
+        borderWidth: borderWidth*0.8,
+        wholeWidth: ClientWidth,
+        fillStyle: "#FFF"
+    };
+    drawListOfRectangle(borderRecTopOption);
+    //画胶卷下方小方框
+    var borderRecBottomOption = {
+        pen: functionPen,
+        startX: baseX+5,
+        startY: baseY+borderWidth+buttonHeight+borderWidth/3,
+        width: borderWidth/3,
+        height: borderWidth/3,
+        borderWidth: borderWidth*0.8,
+        wholeWidth: ClientWidth,
+        fillStyle: "#FFF"
+    };
+    drawListOfRectangle(borderRecBottomOption);
 
     function alertMessage(){alert("看电影，coming soon!");}
-    BindClickEventToRectangle({rectArea:{x:buttonBaseX+130,y:buttonBaseY+50,width:ClientWidth-130,height:50},clickEvent:alertMessage});
+    var clickEventToRectangle = new BindClickEventToRectangle();
+    for(var i = 0;i<6;i++){
+        var clickEvent = {
+            rectArea: {x: buttonBaseX+baseX+i*(buttonWidth+borderWidth), y: buttonBaseY+baseY+borderWidth, width: buttonWidth, height: buttonHeight},
+            clickEvent: alertMessage
+        };
+        clickEventToRectangle.addClickEvent(clickEvent);
+    }
 
 });
 
