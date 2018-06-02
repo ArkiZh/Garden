@@ -12,6 +12,17 @@
         <artifactId>garden-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
     <modules>
         <module>garden-portal-front</module>
         <module>garden-portal-spi</module>
