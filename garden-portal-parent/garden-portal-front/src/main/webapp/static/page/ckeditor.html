@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>CKEditorTest</title>
+    <script src="../plugin/ckeditor/ckeditor5-build-classic-10.0.0/ckeditor5-build-classic/ckeditor.js"></script>
+</head>
+<body>
+    <textarea id="ckEditorTest"></textarea>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#ckEditorTest' ) )
+            .then( editor => {
+            console.log( editor );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+    </script>
+</body>
+</html>
