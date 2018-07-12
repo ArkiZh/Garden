@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>garden-management-parent</artifactId>
+    <artifactId>garden-admin-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <parent>
@@ -13,8 +13,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modules>
-        <module>garden-management-front</module>
-        <module>garden-management-spi</module>
+        <module>garden-admin-front</module>
+        <module>garden-admin-spi</module>
         <module>../garden-service-parent/garden-pojo</module>
         <module>../garden-parent</module>
         <module>../garden-common</module>

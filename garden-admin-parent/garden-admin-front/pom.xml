@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>garden-management-parent</artifactId>
+        <artifactId>garden-admin-parent</artifactId>
         <groupId>com.arkizh.garden</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>garden-management-front</artifactId>
+    <artifactId>garden-admin-front</artifactId>
     <packaging>war</packaging>
 
     <dependencies>
@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>com.arkizh.garden</groupId>
-            <artifactId>garden-management-spi</artifactId>
+            <artifactId>garden-admin-spi</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
